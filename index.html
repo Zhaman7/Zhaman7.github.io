@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VIP Help Lounge: Track and enhance your hotel stay with personalized VIP services.">
+  <meta name="keywords" content="VIP hotel services, guest tracking, concierge, personalized stay">
+  <title>VIP Help Lounge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-[#F8F1E9]">
+  <!-- Navigation -->
+  <nav class="bg-[#1E3A8A] shadow-md sticky top-0">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between">
+      <h1 class="text-2xl font-bold text-[#D4AF37]">VIP Help Lounge</h1>
+      <div class="space-x-4">
+        <a href="#home" class="text-[#F8F1E9] hover:text-[#D4AF37]">Home</a>
+        <a href="#services" class="text-[#F8F1E9] hover:text-[#D4AF37]">Services</a>
+        <a href="#ai-agent" class="text-[#F8F1E9] hover:text-[#D4AF37]">Chat</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-[#1E3A8A] text-[#F8F1E9] py-16 text-center">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Welcome to VIP Help Lounge</h2>
+      <p class="mt-2">Your one-stop solution for a perfect hotel stay!</p>
+      <button id="track-btn" class="mt-4 bg-[#D4AF37] text-[#1E3A8A] font-semibold py-2 px-4 rounded hover:bg-[#F8F1E9]">Track My Stay</button>
+      <p id="track-message" class="mt-2 text-sm hidden">Stay tracked! Check status anytime (demo).</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-12">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center text-[#4B5EAA]">Our VIP Services</h2>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-[#2E7D32] p-6 rounded-lg shadow text-[#F8F1E9]">
+          <h3 class="text-lg font-semibold text-[#D4AF37]">Personal Concierge</h3>
+          <p class="mt-2">24/7 assistance for dining, spa, or travel bookings to make your stay seamless.</p>
+        </div>
+        <div class="bg-[#2E7D32] p-6 rounded-lg shadow text-[#F8F1E9]">
+          <h3 class="text-lg font-semibold text-[#D4AF37]">Stay Tracking</h3>
+          <p class="mt-2">Real-time updates on your room, services, and requests to meet your expectations.</p>
+        </div>
+        <div class="bg-[#2E7D32] p-6 rounded-lg shadow text-[#F8F1E9]">
+          <h3 class="text-lg font-semibold text-[#D4AF37]">Customized Support</h3>
+          <p class="mt-2">Tailored experiences, from room preferences to special events, just for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Agent Section -->
+  <section id="ai-agent" class="bg-[#F8F1E9] py-12">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold text-[#4B5EAA]">Talk to Our AI Helper</h2>
+      <p class="mt-2 text-[#4B5EAA]">Get instant help with your stay!</p>
+      <div id="ai-agent-container" class="mt-6 p-4 bg-white rounded-lg shadow mx-auto max-w-lg">
+        <!-- Replace this with your AI agent's embed code -->
+        <p>Your AI chatbot will appear here. Add its embed code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="py-12">
+    <div class="max-w-lg mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center text-[#4B5EAA]">Need Help?</h2>
+      <form id="contact-form" class="mt-6 space-y-4">
+        <div>
+          <label for="name" class="block text-sm text-[#4B5EAA]">Name</label>
+          <input type="text" id="name" required class="w-full p-2 border rounded">
+        </div>
+        <div>
+          <label for="message" class="block text-sm text-[#4B5EAA]">Message</label>
+          <textarea id="message" rows="3" required class="w-full p-2 border rounded"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-[#D4AF37] text-[#1E3A8A] p-2 rounded hover:bg-[#F8F1E9]">Send</button>
+      </form>
+      <p id="form-message" class="mt-2 text-center text-sm text-[#2E7D32] hidden"></p>
+    </div>
+  </section>
+
+  <script>
+    // Track button interaction
+    document.getElementById('track-btn').addEventListener('click', function () {
+      document.getElementById('track-message').classList.toggle('hidden');
+    });
+
+    // Form submission demo
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('form-message').classList.remove('hidden');
+      document.getElementById('form-message').textContent = 'Message sent! (Demo)';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
